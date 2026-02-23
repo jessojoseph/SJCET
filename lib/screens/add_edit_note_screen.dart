@@ -10,8 +10,16 @@ import '../utils/responsive.dart';
 class AddEditNoteScreen extends StatefulWidget {
   final NoteModel? note;
   final int userId;
+  final String? initialSemester;
+  final String? initialSubject;
 
-  const AddEditNoteScreen({super.key, this.note, required this.userId});
+  const AddEditNoteScreen({
+    super.key,
+    this.note,
+    required this.userId,
+    this.initialSemester,
+    this.initialSubject,
+  });
 
   @override
   State<AddEditNoteScreen> createState() => _AddEditNoteScreenState();
@@ -25,21 +33,20 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
   final _formKey = GlobalKey<FormState>();
   bool _isAddingCustomSemester = false;
   bool _isAddingCustomSubject = false;
-  List<String> _existingSemesters = ['General'];
-  List<String> _existingSubjects = [];
+  final List<String> _existingSemesters = ['General'];
 
   @override
   void initState() {
     super.initState();
     _titleController = TextEditingController(text: widget.note?.title ?? '');
     _subjectController = TextEditingController(
-      text: widget.note?.subject ?? '',
+      text: widget.note?.subject ?? widget.initialSubject ?? '',
     );
     _descriptionController = TextEditingController(
       text: widget.note?.description ?? '',
     );
     _semesterController = TextEditingController(
-      text: widget.note?.semester ?? 'General',
+      text: widget.note?.semester ?? widget.initialSemester ?? 'General',
     );
 
     // Load unique semesters from Bloc
@@ -67,21 +74,8 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
 
     final notesState = context.read<NotesBloc>().state;
     if (notesState is NotesLoaded) {
-      // Find subjects for this semester from notes
-      final subjectsFromNotes = notesState.notes
-          .where((n) => n.semester == semester)
-          .map((n) => n.subject)
-          .toSet()
-          .toList();
-
-      final subjectsFromTable = notesState.subjects;
-
-      setState(() {
-        _existingSubjects = {
-          ...subjectsFromNotes,
-          ...subjectsFromTable,
-        }.toList()..sort();
-      });
+      // Trigger rebuild to show updated subjects via BlocBuilder
+      setState(() {});
     }
   }
 
@@ -143,7 +137,7 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
               child: Icon(
                 Icons.edit_note,
                 size: context.wp(80),
-                color: Colors.white,
+                color: AppTheme.charcoal,
               ),
             ),
           ),
@@ -161,13 +155,13 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
                         onPressed: () => Navigator.pop(context),
                         icon: const Icon(
                           Icons.arrow_back_ios_new,
-                          color: Colors.white,
+                          color: AppTheme.charcoal,
                         ),
                       ),
                       Text(
                         widget.note == null ? "NEW NOTE" : "EDIT NOTE",
                         style: GoogleFonts.outfit(
-                          color: AppTheme.goldAccent,
+                          color: AppTheme.primaryRed,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 2,
                           fontSize: context.sp(16),
@@ -232,11 +226,11 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               gradient: const LinearGradient(
-                colors: [AppTheme.accentIndigo, Color(0xFF3F3D89)],
+                colors: [AppTheme.primaryRed, AppTheme.secondaryRed],
               ),
               boxShadow: [
                 BoxShadow(
-                  color: AppTheme.accentIndigo.withValues(alpha: 0.3),
+                  color: AppTheme.primaryRed.withValues(alpha: 0.3),
                   blurRadius: 20,
                   offset: const Offset(0, 10),
                 ),
@@ -287,21 +281,24 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4.0),
                 child: DropdownButtonFormField<String>(
-                  value: _isAddingCustomSubject
+                  initialValue: _isAddingCustomSubject
                       ? null
                       : (combinedSubjects.contains(_subjectController.text)
                             ? _subjectController.text
                             : null),
-                  dropdownColor: const Color(0xFF1A1A1A),
-                  icon: const Icon(
+                  dropdownColor: AppTheme.pureWhite,
+                  icon: Icon(
                     Icons.keyboard_arrow_down_rounded,
-                    color: Colors.white24,
+                    color: AppTheme.charcoal.withValues(alpha: 0.2),
                   ),
-                  style: GoogleFonts.outfit(color: Colors.white, fontSize: 16),
+                  style: GoogleFonts.outfit(
+                    color: AppTheme.charcoal,
+                    fontSize: 16,
+                  ),
                   decoration: const InputDecoration(
                     prefixIcon: Icon(
                       Icons.book_outlined,
-                      color: AppTheme.goldAccent,
+                      color: AppTheme.primaryRed,
                       size: 20,
                     ),
                     border: InputBorder.none,
@@ -309,7 +306,9 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
                   ),
                   hint: Text(
                     "Select Subject",
-                    style: GoogleFonts.outfit(color: Colors.white24),
+                    style: GoogleFonts.outfit(
+                      color: AppTheme.charcoal.withValues(alpha: 0.3),
+                    ),
                   ),
                   items: [
                     ...combinedSubjects.map((String sub) {
@@ -322,12 +321,12 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
                           Icon(
                             Icons.add_circle_outline,
                             size: 18,
-                            color: AppTheme.goldAccent,
+                            color: AppTheme.primaryRed,
                           ),
                           SizedBox(width: 8),
                           Text(
                             "Add New Subject...",
-                            style: TextStyle(color: AppTheme.goldAccent),
+                            style: TextStyle(color: AppTheme.primaryRed),
                           ),
                         ],
                       ),
@@ -375,21 +374,21 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 4.0),
             child: DropdownButtonFormField<String>(
-              value: _isAddingCustomSemester
+              initialValue: _isAddingCustomSemester
                   ? null
                   : (_existingSemesters.contains(_semesterController.text)
                         ? _semesterController.text
                         : null),
-              dropdownColor: const Color(0xFF1A1A1A),
-              icon: const Icon(
+              dropdownColor: AppTheme.pureWhite,
+              icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
-                color: Colors.white24,
+                color: AppTheme.charcoal.withValues(alpha: 0.2),
               ),
-              style: GoogleFonts.outfit(color: Colors.white, fontSize: 16),
+              style: GoogleFonts.outfit(color: AppTheme.charcoal, fontSize: 16),
               decoration: const InputDecoration(
                 prefixIcon: Icon(
                   Icons.list_alt_rounded,
-                  color: AppTheme.goldAccent,
+                  color: AppTheme.primaryRed,
                   size: 20,
                 ),
                 border: InputBorder.none,
@@ -397,7 +396,9 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
               ),
               hint: Text(
                 "Select Semester",
-                style: GoogleFonts.outfit(color: Colors.white24),
+                style: GoogleFonts.outfit(
+                  color: AppTheme.charcoal.withValues(alpha: 0.3),
+                ),
               ),
               items: [
                 ..._existingSemesters.map((String sem) {
@@ -410,12 +411,12 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
                       Icon(
                         Icons.add_circle_outline,
                         size: 18,
-                        color: AppTheme.goldAccent,
+                        color: AppTheme.primaryRed,
                       ),
                       SizedBox(width: 8),
                       Text(
                         "Add New Semester...",
-                        style: TextStyle(color: AppTheme.goldAccent),
+                        style: TextStyle(color: AppTheme.primaryRed),
                       ),
                     ],
                   ),
@@ -461,7 +462,7 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
       child: Text(
         label,
         style: GoogleFonts.outfit(
-          color: Colors.white38,
+          color: AppTheme.charcoal.withValues(alpha: 0.4),
           fontSize: 10,
           fontWeight: FontWeight.bold,
           letterSpacing: 1.5,
@@ -485,15 +486,17 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
         controller: controller,
         maxLines: maxLines,
         validator: validator,
-        style: GoogleFonts.outfit(color: Colors.white, fontSize: 16),
+        style: GoogleFonts.outfit(color: AppTheme.charcoal, fontSize: 16),
         decoration: InputDecoration(
           hintText: hint,
-          hintStyle: GoogleFonts.outfit(color: Colors.white12),
+          hintStyle: GoogleFonts.outfit(
+            color: AppTheme.charcoal.withValues(alpha: 0.2),
+          ),
           prefixIcon: Padding(
             padding: const EdgeInsets.only(bottom: 0),
             child: Icon(
               icon,
-              color: AppTheme.goldAccent.withValues(alpha: 0.5),
+              color: AppTheme.primaryRed.withValues(alpha: 0.5),
               size: 20,
             ),
           ),
@@ -506,11 +509,13 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),
-            borderSide: BorderSide(color: Colors.white.withValues(alpha: 0.05)),
+            borderSide: BorderSide(
+              color: AppTheme.charcoal.withValues(alpha: 0.1),
+            ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),
-            borderSide: const BorderSide(color: AppTheme.goldAccent, width: 1),
+            borderSide: const BorderSide(color: AppTheme.primaryRed, width: 1),
           ),
         ),
       ),

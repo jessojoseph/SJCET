@@ -13,6 +13,7 @@ import '../utils/responsive.dart';
 
 import 'auth/login_screen.dart';
 import 'add_edit_note_screen.dart';
+import 'view_note_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final UserModel user;
@@ -93,12 +94,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 Container(
                   padding: const EdgeInsets.all(14),
                   decoration: BoxDecoration(
-                    color: AppTheme.goldAccent.withValues(alpha: 0.1),
+                    color: AppTheme.primaryRed.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
                     Icons.calendar_month_outlined,
-                    color: AppTheme.goldAccent,
+                    color: AppTheme.primaryRed,
                     size: 28,
                   ),
                 ),
@@ -126,7 +127,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     decoration: InputDecoration(
                       hintText: "e.g. Semester 9",
-                      hintStyle: GoogleFonts.outfit(color: Colors.white24),
+                      hintStyle: GoogleFonts.outfit(
+                        color: AppTheme.charcoal.withValues(alpha: 0.2),
+                      ),
                       contentPadding: const EdgeInsets.symmetric(
                         horizontal: 20,
                         vertical: 15,
@@ -148,7 +151,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Text(
                               "CANCEL",
                               style: GoogleFonts.outfit(
-                                color: Colors.white38,
+                                color: AppTheme.charcoal.withValues(alpha: 0.4),
                                 fontWeight: FontWeight.bold,
                                 fontSize: context.sp(12),
                                 letterSpacing: 1.2,
@@ -175,14 +178,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Container(
                           padding: const EdgeInsets.symmetric(vertical: 10),
                           decoration: BoxDecoration(
-                            color: AppTheme.goldAccent.withValues(alpha: 0.8),
+                            color: AppTheme.primaryRed.withValues(alpha: 0.8),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Center(
                             child: Text(
                               "ADD",
                               style: GoogleFonts.outfit(
-                                color: AppTheme.pureBlack,
+                                color: AppTheme.charcoal,
                                 fontWeight: FontWeight.bold,
                                 fontSize: context.sp(12),
                                 letterSpacing: 1.2,
@@ -232,12 +235,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 Container(
                   padding: const EdgeInsets.all(14),
                   decoration: BoxDecoration(
-                    color: AppTheme.goldAccent.withValues(alpha: 0.1),
+                    color: AppTheme.primaryRed.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
                     Icons.auto_stories_rounded,
-                    color: AppTheme.goldAccent,
+                    color: AppTheme.primaryRed,
                     size: 28,
                   ),
                 ),
@@ -254,7 +257,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Text(
                   "For $_selectedSemester",
                   style: GoogleFonts.outfit(
-                    color: Colors.white38,
+                    color: AppTheme.charcoal.withValues(alpha: 0.4),
                     fontSize: 12,
                   ),
                 ),
@@ -273,7 +276,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     decoration: InputDecoration(
                       hintText: "e.g. Thermodynamics",
-                      hintStyle: GoogleFonts.outfit(color: Colors.white24),
+                      hintStyle: GoogleFonts.outfit(
+                        color: AppTheme.charcoal.withValues(alpha: 0.2),
+                      ),
                       contentPadding: const EdgeInsets.symmetric(
                         horizontal: 20,
                         vertical: 15,
@@ -295,7 +300,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Text(
                               "CANCEL",
                               style: GoogleFonts.outfit(
-                                color: Colors.white38,
+                                color: AppTheme.charcoal.withValues(alpha: 0.4),
                                 fontWeight: FontWeight.bold,
                                 fontSize: context.sp(12),
                                 letterSpacing: 1.2,
@@ -323,14 +328,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Container(
                           padding: const EdgeInsets.symmetric(vertical: 10),
                           decoration: BoxDecoration(
-                            color: AppTheme.goldAccent.withValues(alpha: 0.8),
+                            color: AppTheme.primaryRed.withValues(alpha: 0.8),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Center(
                             child: Text(
                               "ADD",
                               style: GoogleFonts.outfit(
-                                color: AppTheme.pureBlack,
+                                color: AppTheme.charcoal,
                                 fontWeight: FontWeight.bold,
                                 fontSize: context.sp(12),
                                 letterSpacing: 1.2,
@@ -409,7 +414,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Text(
                               "CANCEL",
                               style: GoogleFonts.outfit(
-                                color: Colors.white38,
+                                color: AppTheme.charcoal.withValues(alpha: 0.4),
                                 fontWeight: FontWeight.bold,
                                 fontSize: context.sp(12),
                                 letterSpacing: 1.2,
@@ -477,12 +482,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 Container(
                   padding: const EdgeInsets.all(14),
                   decoration: BoxDecoration(
-                    color: AppTheme.accentIndigo.withValues(alpha: 0.1),
+                    color: AppTheme.primaryRed.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
                     Icons.logout_rounded,
-                    color: AppTheme.accentIndigo,
+                    color: AppTheme.primaryRed,
                     size: 28,
                   ),
                 ),
@@ -517,7 +522,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Text(
                               "STAY",
                               style: GoogleFonts.outfit(
-                                color: Colors.white38,
+                                color: AppTheme.charcoal.withValues(alpha: 0.4),
                                 fontWeight: FontWeight.bold,
                                 fontSize: context.sp(12),
                                 letterSpacing: 1.2,
@@ -542,7 +547,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Container(
                           padding: const EdgeInsets.symmetric(vertical: 10),
                           decoration: BoxDecoration(
-                            color: AppTheme.accentIndigo.withValues(alpha: 0.8),
+                            color: AppTheme.primaryRed.withValues(alpha: 0.8),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Center(
@@ -572,8 +577,14 @@ class _HomeScreenState extends State<HomeScreen> {
   void _navigateToAddEdit({NoteModel? note}) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) =>
-            AddEditNoteScreen(note: note, userId: widget.user.id!),
+        builder: (context) => AddEditNoteScreen(
+          note: note,
+          userId: widget.user.id!,
+          initialSemester: _selectedSemester == "All"
+              ? null
+              : _selectedSemester,
+          initialSubject: _selectedSubject == "All" ? null : _selectedSubject,
+        ),
       ),
     );
   }
@@ -604,7 +615,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Icon(
                 Icons.school,
                 size: context.wp(80),
-                color: Colors.white,
+                color: AppTheme.charcoal,
               ),
             ),
           ),
@@ -628,19 +639,19 @@ class _HomeScreenState extends State<HomeScreen> {
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(
-                            color: AppTheme.goldAccent.withValues(alpha: 0.3),
+                            color: AppTheme.primaryRed.withValues(alpha: 0.3),
                             width: 1.5,
                           ),
                         ),
                         child: CircleAvatar(
                           radius: context.wp(6),
-                          backgroundColor: AppTheme.accentIndigo.withValues(
+                          backgroundColor: AppTheme.primaryRed.withValues(
                             alpha: 0.1,
                           ),
                           child: Text(
                             widget.user.name.substring(0, 1).toUpperCase(),
                             style: GoogleFonts.outfit(
-                              color: AppTheme.goldAccent,
+                              color: AppTheme.primaryRed,
                               fontWeight: FontWeight.bold,
                               fontSize: context.sp(18),
                             ),
@@ -655,7 +666,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Text(
                               _getGreeting(),
                               style: GoogleFonts.outfit(
-                                color: Colors.white54,
+                                color: AppTheme.charcoal.withValues(alpha: 0.5),
                                 fontSize: context.sp(14),
                                 fontWeight: FontWeight.w400,
                               ),
@@ -664,7 +675,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               widget.user.name,
                               overflow: TextOverflow.ellipsis,
                               style: GoogleFonts.outfit(
-                                color: Colors.white,
+                                color: AppTheme.charcoal,
                                 fontSize: context.sp(24),
                                 fontWeight: FontWeight.bold,
                               ),
@@ -708,23 +719,27 @@ class _HomeScreenState extends State<HomeScreen> {
                         });
                       },
                       style: GoogleFonts.outfit(
-                        color: Colors.white,
+                        color: AppTheme.charcoal,
                         fontSize: 15,
                       ),
                       decoration: InputDecoration(
                         hintText: "Search your library...",
-                        hintStyle: GoogleFonts.outfit(color: Colors.white24),
-                        prefixIcon: const Icon(
+                        hintStyle: GoogleFonts.outfit(
+                          color: AppTheme.charcoal.withValues(alpha: 0.3),
+                        ),
+                        prefixIcon: Icon(
                           Icons.search_rounded,
-                          color: Colors.white38,
+                          color: AppTheme.charcoal.withValues(alpha: 0.4),
                           size: 20,
                         ),
                         suffixIcon: _searchQuery.isNotEmpty
                             ? IconButton(
-                                icon: const Icon(
+                                icon: Icon(
                                   Icons.close,
                                   size: 18,
-                                  color: Colors.white38,
+                                  color: AppTheme.charcoal.withValues(
+                                    alpha: 0.4,
+                                  ),
                                 ),
                                 onPressed: () {
                                   _searchController.clear();
@@ -766,14 +781,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                 "Total Notes",
                                 totalNotes.toString(),
                                 Icons.description_rounded,
-                                AppTheme.goldAccent,
+                                AppTheme.primaryRed,
                               ),
                               const SizedBox(width: 12),
                               _buildStatCard(
                                 "Study Time",
                                 studyTimeStr,
                                 Icons.timer_rounded,
-                                AppTheme.accentIndigo,
+                                AppTheme.secondaryRed,
                               ),
                             ],
                           );
@@ -784,172 +799,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const SizedBox(height: 25),
 
-                // Semester Navigation
-                _buildSectionHeader(
-                  "CAMPUS SEMESTER",
-                  onAdd: _showAddSemesterDialog,
-                  addButtonLabel: "Add Semester",
-                ),
-                const SizedBox(height: 12),
-                BlocBuilder<NotesBloc, NotesState>(
-                  builder: (context, state) {
-                    List<String> semesters = ["All"];
-                    if (state is NotesLoaded) {
-                      final combined = <String>{
-                        ...state.semesters,
-                        ...state.notes
-                            .map((n) => n.semester)
-                            .where((s) => s != 'General'),
-                      }.toList()..sort();
-                      semesters.addAll(<String>["General", ...combined]);
-                    }
-
-                    return SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      physics: const BouncingScrollPhysics(),
-                      padding: EdgeInsets.symmetric(horizontal: context.wp(6)),
-                      child: Row(
-                        children: semesters.map((sem) {
-                          return _buildFilterChip(sem);
-                        }).toList(),
-                      ),
-                    );
-                  },
-                ),
-                const SizedBox(height: 25),
-
-                // Subject Navigation
-                _buildSectionHeader(
-                  "CURRICULUM SUBJECTS",
-                  onAdd: _selectedSemester != "All"
-                      ? _showAddSubjectDialog
-                      : null,
-                  addButtonLabel: "Add Subject",
-                ),
-                const SizedBox(height: 12),
-                BlocBuilder<NotesBloc, NotesState>(
-                  builder: (context, state) {
-                    List<String> subjects = ["All"];
-                    if (state is NotesLoaded) {
-                      final filteredBySem = state.notes.where(
-                        (n) =>
-                            _selectedSemester == "All" ||
-                            n.semester == _selectedSemester,
-                      );
-
-                      final fromNotes = filteredBySem
-                          .map((n) => n.subject)
-                          .toSet();
-
-                      final fromTable = _selectedSemester == "All"
-                          ? <String>[]
-                          : state.subjects;
-
-                      final combined = {...fromNotes, ...fromTable}.toList()
-                        ..sort();
-                      subjects.addAll(combined);
-                    }
-
-                    if (!subjects.contains(_selectedSubject)) {
-                      _selectedSubject = "All";
-                    }
-
-                    return SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      physics: const BouncingScrollPhysics(),
-                      padding: EdgeInsets.symmetric(horizontal: context.wp(6)),
-                      child: Row(
-                        children: subjects.map((sub) {
-                          return _buildFilterChip(sub, isSubject: true);
-                        }).toList(),
-                      ),
-                    );
-                  },
-                ),
-                const SizedBox(height: 35),
-
-                // Section Title + Result Count
+                // Breadcrumbs / Navigation Path
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: context.wp(6)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "RESEARCH NOTES",
-                            style: GoogleFonts.outfit(
-                              color: AppTheme.goldAccent.withValues(alpha: 0.7),
-                              fontSize: context.sp(10),
-                              fontWeight: FontWeight.w900,
-                              letterSpacing: 3,
-                            ),
-                          ),
-                          const SizedBox(height: 4),
-                          Text(
-                            _selectedSemester == "All"
-                                ? "Global Library"
-                                : "$_selectedSemester Curricula",
-                            style: GoogleFonts.outfit(
-                              color: Colors.white,
-                              fontSize: context.sp(18),
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                      BlocBuilder<NotesBloc, NotesState>(
-                        builder: (context, state) {
-                          int count = 0;
-                          if (state is NotesLoaded) {
-                            count = state.notes.where((n) {
-                              final matchesSearch =
-                                  n.title.toLowerCase().contains(
-                                    _searchQuery,
-                                  ) ||
-                                  n.subject.toLowerCase().contains(
-                                    _searchQuery,
-                                  );
-                              final matchesSemester =
-                                  _selectedSemester == "All" ||
-                                  n.semester == _selectedSemester;
-                              final matchesSubject =
-                                  _selectedSubject == "All" ||
-                                  n.subject == _selectedSubject;
-                              return matchesSearch &&
-                                  matchesSemester &&
-                                  matchesSubject;
-                            }).length;
-                          }
-                          return Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 10,
-                              vertical: 5,
-                            ),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.05),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Text(
-                              "$count ITEMS",
-                              style: GoogleFonts.outfit(
-                                color: Colors.white38,
-                                fontSize: 10,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 1,
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                    ],
-                  ),
+                  child: _buildBreadcrumbs(),
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 20),
 
-                // Notes List
+                // Main Content: Folders or Notes
                 Expanded(
                   child: BlocConsumer<NotesBloc, NotesState>(
                     listener: (context, state) {
@@ -973,45 +830,18 @@ class _HomeScreenState extends State<HomeScreen> {
                       if (state is NotesLoading) {
                         return const Center(
                           child: CircularProgressIndicator(
-                            color: AppTheme.goldAccent,
+                            color: AppTheme.primaryRed,
                           ),
                         );
                       } else if (state is NotesLoaded) {
-                        final filteredNotes = state.notes.where((n) {
-                          final matchesSearch =
-                              n.title.toLowerCase().contains(_searchQuery) ||
-                              n.subject.toLowerCase().contains(_searchQuery);
-                          final matchesSemester =
-                              _selectedSemester == "All" ||
-                              n.semester == _selectedSemester;
-                          final matchesSubject =
-                              _selectedSubject == "All" ||
-                              n.subject == _selectedSubject;
-                          return matchesSearch &&
-                              matchesSemester &&
-                              matchesSubject;
-                        }).toList();
-
-                        if (filteredNotes.isEmpty) {
-                          return _buildEmptyState();
-                        }
-
-                        return ListView.builder(
-                          physics: const BouncingScrollPhysics(),
-                          padding: EdgeInsets.symmetric(
-                            horizontal: context.wp(6),
-                            vertical: 10,
-                          ),
-                          itemCount: filteredNotes.length,
-                          itemBuilder: (context, index) {
-                            return _buildNoteCard(filteredNotes[index]);
-                          },
-                        );
+                        return _buildHierarchicalContent(state);
                       }
-                      return const Center(
+                      return Center(
                         child: Text(
                           "Start adding your campus notes!",
-                          style: TextStyle(color: Colors.white38),
+                          style: TextStyle(
+                            color: AppTheme.charcoal.withValues(alpha: 0.4),
+                          ),
                         ),
                       );
                     },
@@ -1022,10 +852,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: () => _navigateToAddEdit(),
-        backgroundColor: AppTheme.goldAccent,
-        child: const Icon(Icons.add, color: AppTheme.pureBlack),
+        backgroundColor: AppTheme.primaryRed,
+        child: const Icon(Icons.add, color: AppTheme.charcoal),
       ),
     );
   }
@@ -1044,14 +875,14 @@ class _HomeScreenState extends State<HomeScreen> {
           Text(
             "No notes yet.",
             style: GoogleFonts.outfit(
-              color: Colors.white38,
+              color: AppTheme.charcoal.withValues(alpha: 0.4),
               fontSize: context.sp(18),
             ),
           ),
           Text(
             "Tap + to create your first lecture note.",
             style: GoogleFonts.outfit(
-              color: Colors.white24,
+              color: AppTheme.charcoal.withValues(alpha: 0.2),
               fontSize: context.sp(14),
             ),
           ),
@@ -1060,48 +891,350 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildFilterChip(String label, {bool isSubject = false}) {
-    bool isSelected = isSubject
-        ? _selectedSubject == label
-        : _selectedSemester == label;
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          if (isSubject) {
-            _selectedSubject = label;
-          } else {
-            _selectedSemester = label;
-            _selectedSubject = "All"; // Reset subject when semester changes
-            if (label != "All") {
-              context.read<NotesBloc>().add(
-                LoadSubjectsEvent(widget.user.id!, label),
+  Widget _buildBreadcrumbs() {
+    bool isRoot = _selectedSemester == "All";
+    bool isSubjectSelected = _selectedSubject != "All";
+
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      decoration: BoxDecoration(
+        color: AppTheme.charcoal.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                _selectedSemester = "All";
+                _selectedSubject = "All";
+              });
+            },
+            child: Icon(
+              Icons.home_rounded,
+              size: 18,
+              color: isRoot
+                  ? AppTheme.primaryRed
+                  : AppTheme.charcoal.withValues(alpha: 0.3),
+            ),
+          ),
+          if (!isRoot) ...[
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Icon(
+                Icons.chevron_right_rounded,
+                size: 16,
+                color: AppTheme.charcoal.withValues(alpha: 0.2),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  _selectedSubject = "All";
+                });
+              },
+              child: Text(
+                _selectedSemester,
+                style: GoogleFonts.outfit(
+                  color: !isSubjectSelected
+                      ? AppTheme.primaryRed
+                      : AppTheme.charcoal.withValues(alpha: 0.4),
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
+          if (isSubjectSelected) ...[
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Icon(
+                Icons.chevron_right_rounded,
+                size: 16,
+                color: AppTheme.charcoal.withValues(alpha: 0.2),
+              ),
+            ),
+            Text(
+              _selectedSubject,
+              style: GoogleFonts.outfit(
+                color: AppTheme.primaryRed,
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+
+  Widget _buildHierarchicalContent(NotesLoaded state) {
+    if (_searchQuery.isNotEmpty) {
+      return _buildSearchResults(state);
+    }
+
+    if (_selectedSemester == "All") {
+      return _buildSemesterGrid(state);
+    } else if (_selectedSubject == "All") {
+      return _buildSubjectGrid(state);
+    } else {
+      return _buildNotesList(state);
+    }
+  }
+
+  Widget _buildSemesterGrid(NotesLoaded state) {
+    final combined = <String>{
+      ...state.semesters,
+      ...state.notes.map((n) => n.semester).where((s) => s != 'General'),
+    }.toList()..sort();
+    final semesters = ["General", ...combined];
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildSectionHeader(
+          "CAMPUS SEMESTERS",
+          onAdd: _showAddSemesterDialog,
+          addButtonLabel: "Add Semester",
+        ),
+        const SizedBox(height: 15),
+        Expanded(
+          child: GridView.builder(
+            padding: EdgeInsets.symmetric(
+              horizontal: context.wp(6),
+              vertical: 10,
+            ),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 15,
+              mainAxisSpacing: 15,
+              childAspectRatio: 1.0,
+            ),
+            itemCount: semesters.length,
+            itemBuilder: (context, index) {
+              final sem = semesters[index];
+              final noteCount = state.notes
+                  .where((n) => n.semester == sem)
+                  .length;
+
+              return _buildFolderCard(
+                title: sem,
+                subtitle: "$noteCount Notes",
+                icon: Icons.folder_copy_rounded,
+                accentColor: AppTheme.primaryRed,
+                onTap: () {
+                  setState(() {
+                    _selectedSemester = sem;
+                    _selectedSubject = "All";
+                  });
+                  context.read<NotesBloc>().add(
+                    LoadSubjectsEvent(widget.user.id!, sem),
+                  );
+                },
               );
-            }
-          }
-        });
-      },
-      child: Container(
-        margin: const EdgeInsets.only(right: 10),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        decoration: BoxDecoration(
-          color: isSelected
-              ? (isSubject ? AppTheme.goldAccent : AppTheme.accentIndigo)
-              : Colors.white.withValues(alpha: 0.05),
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(
-            color: isSelected
-                ? (isSubject ? AppTheme.goldAccent : AppTheme.accentIndigo)
-                : Colors.white.withValues(alpha: 0.05),
+            },
           ),
         ),
-        child: Text(
-          label,
-          style: GoogleFonts.outfit(
-            color: isSelected
-                ? (isSubject ? AppTheme.pureBlack : Colors.white)
-                : Colors.white38,
-            fontSize: 12,
-            fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
+      ],
+    );
+  }
+
+  Widget _buildSubjectGrid(NotesLoaded state) {
+    final fromNotes = state.notes
+        .where((n) => n.semester == _selectedSemester)
+        .map((n) => n.subject)
+        .toSet();
+    final combined = {...fromNotes, ...state.subjects}.toList()..sort();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildSectionHeader(
+          "CURRICULUM SUBJECTS",
+          onAdd: _showAddSubjectDialog,
+          addButtonLabel: "Add Subject",
+        ),
+        const SizedBox(height: 15),
+        Expanded(
+          child: combined.isEmpty
+              ? _buildEmptyState()
+              : GridView.builder(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: context.wp(6),
+                    vertical: 10,
+                  ),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 15,
+                    mainAxisSpacing: 15,
+                    childAspectRatio: 1.0,
+                  ),
+                  itemCount: combined.length,
+                  itemBuilder: (context, index) {
+                    final sub = combined[index];
+                    final noteCount = state.notes
+                        .where(
+                          (n) =>
+                              n.semester == _selectedSemester &&
+                              n.subject == sub,
+                        )
+                        .length;
+
+                    return _buildFolderCard(
+                      title: sub,
+                      subtitle: "$noteCount Notes",
+                      icon: Icons.auto_stories_rounded,
+                      accentColor: AppTheme.primaryRed,
+                      onTap: () {
+                        setState(() {
+                          _selectedSubject = sub;
+                        });
+                      },
+                    );
+                  },
+                ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildNotesList(NotesLoaded state) {
+    final filteredNotes = state.notes.where((n) {
+      return n.semester == _selectedSemester && n.subject == _selectedSubject;
+    }).toList();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildSectionHeader(
+          "SUBJECT NOTES",
+          onAdd: () => _navigateToAddEdit(),
+          addButtonLabel: "Add Note",
+        ),
+        const SizedBox(height: 15),
+        Expanded(
+          child: filteredNotes.isEmpty
+              ? _buildEmptyState()
+              : ListView.builder(
+                  physics: const BouncingScrollPhysics(),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: context.wp(6),
+                    vertical: 10,
+                  ),
+                  itemCount: filteredNotes.length,
+                  itemBuilder: (context, index) {
+                    return _buildNoteCard(filteredNotes[index]);
+                  },
+                ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSearchResults(NotesLoaded state) {
+    final filteredNotes = state.notes.where((n) {
+      final query = _searchQuery.toLowerCase();
+      return n.title.toLowerCase().contains(query) ||
+          n.subject.toLowerCase().contains(query) ||
+          n.semester.toLowerCase().contains(query) ||
+          n.description.toLowerCase().contains(query);
+    }).toList();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: context.wp(6)),
+          child: Text(
+            "SEARCH RESULTS (${filteredNotes.length})",
+            style: GoogleFonts.outfit(
+              color: AppTheme.charcoal.withValues(alpha: 0.4),
+              fontSize: 10,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 2,
+            ),
+          ),
+        ),
+        const SizedBox(height: 15),
+        Expanded(
+          child: filteredNotes.isEmpty
+              ? _buildEmptyState()
+              : ListView.builder(
+                  physics: const BouncingScrollPhysics(),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: context.wp(6),
+                    vertical: 10,
+                  ),
+                  itemCount: filteredNotes.length,
+                  itemBuilder: (context, index) {
+                    return _buildNoteCard(filteredNotes[index]);
+                  },
+                ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildFolderCard({
+    required String title,
+    required String subtitle,
+    required IconData icon,
+    required Color accentColor,
+    required VoidCallback onTap,
+  }) {
+    return GlassCard(
+      borderRadius: 24,
+      blur: 20,
+      opacity: 0.05,
+      color: AppTheme.charcoal,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(24),
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: accentColor.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Icon(icon, color: accentColor, size: 22),
+                  ),
+                  Icon(
+                    Icons.chevron_right_rounded,
+                    color: AppTheme.charcoal.withValues(alpha: 0.2),
+                    size: 18,
+                  ),
+                ],
+              ),
+              const Spacer(),
+              Text(
+                title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: GoogleFonts.outfit(
+                  color: AppTheme.charcoal,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                subtitle,
+                style: GoogleFonts.outfit(
+                  color: AppTheme.charcoal.withValues(alpha: 0.5),
+                  fontSize: 12,
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -1119,6 +1252,7 @@ class _HomeScreenState extends State<HomeScreen> {
         borderRadius: 20,
         blur: 10,
         opacity: 0.05,
+        color: AppTheme.charcoal,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -1129,7 +1263,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Text(
                 value,
                 style: GoogleFonts.outfit(
-                  color: Colors.white,
+                  color: AppTheme.charcoal,
                   fontSize: context.sp(22),
                   fontWeight: FontWeight.bold,
                 ),
@@ -1137,7 +1271,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Text(
                 label,
                 style: GoogleFonts.outfit(
-                  color: Colors.white38,
+                  color: AppTheme.charcoal.withValues(alpha: 0.4),
                   fontSize: context.sp(11),
                   fontWeight: FontWeight.w500,
                 ),
@@ -1158,10 +1292,18 @@ class _HomeScreenState extends State<HomeScreen> {
       child: GlassCard(
         borderRadius: 24,
         blur: 20,
-        opacity: 0.1,
+        opacity: 0.05,
+        color: AppTheme.charcoal,
         child: InkWell(
           borderRadius: BorderRadius.circular(24),
-          onTap: () => _navigateToAddEdit(note: note),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ViewNoteScreen(note: note),
+              ),
+            );
+          },
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
@@ -1176,10 +1318,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         vertical: 6,
                       ),
                       decoration: BoxDecoration(
-                        color: AppTheme.goldAccent.withValues(alpha: 0.1),
+                        color: AppTheme.primaryRed.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
-                          color: AppTheme.goldAccent.withValues(alpha: 0.2),
+                          color: AppTheme.primaryRed.withValues(alpha: 0.2),
                         ),
                       ),
                       child: Row(
@@ -1188,13 +1330,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           const Icon(
                             Icons.calendar_month_outlined,
                             size: 10,
-                            color: Colors.white38,
+                            color: AppTheme.charcoal,
                           ),
                           const SizedBox(width: 4),
                           Text(
                             note.semester.toUpperCase(),
                             style: GoogleFonts.outfit(
-                              color: Colors.white38,
+                              color: AppTheme.charcoal.withValues(alpha: 0.6),
                               fontSize: 9,
                               fontWeight: FontWeight.w600,
                             ),
@@ -1203,13 +1345,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           const Icon(
                             Icons.school_outlined,
                             size: 12,
-                            color: AppTheme.goldAccent,
+                            color: AppTheme.primaryRed,
                           ),
                           const SizedBox(width: 6),
                           Text(
                             note.subject.toUpperCase(),
                             style: GoogleFonts.outfit(
-                              color: AppTheme.goldAccent,
+                              color: AppTheme.primaryRed,
                               fontSize: 10,
                               fontWeight: FontWeight.w700,
                               letterSpacing: 1,
@@ -1225,7 +1367,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Text(
                   note.title,
                   style: GoogleFonts.outfit(
-                    color: Colors.white,
+                    color: AppTheme.charcoal,
                     fontSize: context.sp(18),
                     fontWeight: FontWeight.bold,
                   ),
@@ -1236,7 +1378,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: GoogleFonts.outfit(
-                    color: Colors.white.withValues(alpha: 0.5),
+                    color: AppTheme.charcoal.withValues(alpha: 0.6),
                     fontSize: context.sp(14),
                     height: 1.4,
                   ),
@@ -1247,16 +1389,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Row(
                       children: [
-                        const Icon(
+                        Icon(
                           Icons.access_time,
                           size: 12,
-                          color: Colors.white24,
+                          color: AppTheme.charcoal.withValues(alpha: 0.2),
                         ),
                         const SizedBox(width: 4),
                         Text(
                           formattedDate,
                           style: GoogleFonts.outfit(
-                            color: Colors.white24,
+                            color: AppTheme.charcoal.withValues(alpha: 0.2),
                             fontSize: 12,
                           ),
                         ),
@@ -1265,7 +1407,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Icon(
                       Icons.arrow_forward_rounded,
                       size: 16,
-                      color: AppTheme.goldAccent.withValues(alpha: 0.3),
+                      color: AppTheme.primaryRed.withValues(alpha: 0.3),
                     ),
                   ],
                 ),
@@ -1279,13 +1421,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildCompactActionButtons(NoteModel note) {
     return PopupMenuButton<String>(
-      icon: const Icon(
+      icon: Icon(
         Icons.more_vert_rounded,
-        color: Colors.white38,
+        color: AppTheme.charcoal.withValues(alpha: 0.3),
         size: 20,
       ),
       padding: EdgeInsets.zero,
-      color: const Color(0xFF1E1E1E),
+      color: AppTheme.pureWhite,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       onSelected: (val) {
         if (val == 'delete') {
@@ -1299,7 +1441,11 @@ class _HomeScreenState extends State<HomeScreen> {
           value: 'edit',
           child: Row(
             children: [
-              const Icon(Icons.edit_outlined, size: 18, color: Colors.white),
+              const Icon(
+                Icons.edit_outlined,
+                size: 18,
+                color: AppTheme.charcoal,
+              ),
               const SizedBox(width: 10),
               Text("Edit Note", style: GoogleFonts.outfit(fontSize: 14)),
             ],
@@ -1342,7 +1488,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Text(
             title,
             style: GoogleFonts.outfit(
-              color: Colors.white38,
+              color: AppTheme.charcoal.withValues(alpha: 0.6),
               fontSize: context.sp(10),
               fontWeight: FontWeight.bold,
               letterSpacing: 1.5,
@@ -1357,10 +1503,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: AppTheme.goldAccent.withValues(alpha: 0.1),
+                  color: AppTheme.primaryRed.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: AppTheme.goldAccent.withValues(alpha: 0.2),
+                    color: AppTheme.primaryRed.withValues(alpha: 0.2),
                   ),
                 ),
                 child: Row(
@@ -1368,13 +1514,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     const Icon(
                       Icons.add_rounded,
                       size: 14,
-                      color: AppTheme.goldAccent,
+                      color: AppTheme.primaryRed,
                     ),
                     const SizedBox(width: 4),
                     Text(
                       addButtonLabel ?? "ADD",
                       style: GoogleFonts.outfit(
-                        color: AppTheme.goldAccent,
+                        color: AppTheme.primaryRed,
                         fontSize: 10,
                         fontWeight: FontWeight.bold,
                       ),

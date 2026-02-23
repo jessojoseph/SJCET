@@ -83,11 +83,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 bottom: -context.hp(10),
                 right: -context.wp(20),
                 child: Opacity(
-                  opacity: 0.1,
+                  opacity: 0.05,
                   child: Icon(
                     Icons.history_edu,
                     size: context.wp(100),
-                    color: Colors.white,
+                    color: AppTheme.charcoal,
                   ),
                 ),
               ),
@@ -99,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Icon(
                     Icons.account_balance,
                     size: context.wp(60),
-                    color: AppTheme.goldAccent,
+                    color: AppTheme.primaryRed,
                   ),
                 ),
               ),
@@ -126,9 +126,13 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: Colors.white.withValues(alpha: 0.03),
+                                color: AppTheme.primaryRed.withValues(
+                                  alpha: 0.03,
+                                ),
                                 border: Border.all(
-                                  color: Colors.white.withValues(alpha: 0.05),
+                                  color: AppTheme.primaryRed.withValues(
+                                    alpha: 0.05,
+                                  ),
                                 ),
                               ),
                               child: Image.asset(
@@ -145,7 +149,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             style: GoogleFonts.outfit(
                               fontSize: context.sp(14),
                               fontWeight: FontWeight.w600,
-                              color: AppTheme.goldAccent,
+                              color: AppTheme.primaryRed,
                               letterSpacing: 6,
                             ),
                           ),
@@ -156,7 +160,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             style: GoogleFonts.outfit(
                               fontSize: context.sp(26),
                               fontWeight: FontWeight.w300,
-                              color: Colors.white,
+                              color: AppTheme.charcoal,
                               height: 1.2,
                             ),
                           ),
@@ -197,8 +201,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               child: Text(
                                 "Forgot Password",
                                 style: GoogleFonts.outfit(
-                                  color: AppTheme.goldAccent.withValues(
-                                    alpha: 0.6,
+                                  color: AppTheme.primaryRed.withValues(
+                                    alpha: 0.8,
                                   ),
                                   fontSize: context.sp(12),
                                   fontWeight: FontWeight.w500,
@@ -218,7 +222,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 borderRadius: BorderRadius.circular(20),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: AppTheme.accentIndigo.withValues(
+                                    color: AppTheme.primaryRed.withValues(
                                       alpha: 0.3,
                                     ),
                                     blurRadius: 20,
@@ -227,8 +231,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ],
                                 gradient: const LinearGradient(
                                   colors: [
-                                    AppTheme.accentIndigo,
-                                    Color(0xFF3F3D89),
+                                    AppTheme.primaryRed,
+                                    AppTheme.secondaryRed,
                                   ],
                                 ),
                               ),
@@ -259,7 +263,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           Text(
                             "SJCET PALAI • SMART NOTES",
                             style: GoogleFonts.outfit(
-                              color: Colors.white24,
+                              color: AppTheme.charcoal.withValues(alpha: 0.3),
                               fontSize: context.sp(11),
                               letterSpacing: 4,
                               fontWeight: FontWeight.w300,
@@ -280,7 +284,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: RichText(
                               text: TextSpan(
                                 style: GoogleFonts.outfit(
-                                  color: Colors.white,
+                                  color: AppTheme.charcoal,
                                   fontSize: context.sp(15),
                                 ),
                                 children: [
@@ -293,7 +297,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   TextSpan(
                                     text: "Join Now",
                                     style: TextStyle(
-                                      color: AppTheme.goldAccent,
+                                      color: AppTheme.primaryRed,
                                       fontWeight: FontWeight.w700,
                                     ),
                                   ),
@@ -332,7 +336,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Text(
             label,
             style: GoogleFonts.outfit(
-              color: Colors.white38,
+              color: AppTheme.charcoal.withValues(alpha: 0.4),
               fontSize: 9,
               fontWeight: FontWeight.w700,
               letterSpacing: 2,
@@ -349,11 +353,11 @@ class _LoginScreenState extends State<LoginScreen> {
             keyboardType: keyboardType,
             validator: validator,
             enabled: enabled,
-            style: GoogleFonts.outfit(color: Colors.white, fontSize: 15),
+            style: GoogleFonts.outfit(color: AppTheme.charcoal, fontSize: 15),
             decoration: InputDecoration(
               prefixIcon: Icon(
                 icon,
-                color: AppTheme.goldAccent.withValues(alpha: 0.8),
+                color: AppTheme.primaryRed.withValues(alpha: 0.8),
                 size: 18,
               ),
               filled: true,
@@ -369,13 +373,13 @@ class _LoginScreenState extends State<LoginScreen> {
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(18),
                 borderSide: BorderSide(
-                  color: Colors.white.withValues(alpha: 0.05),
+                  color: AppTheme.charcoal.withValues(alpha: 0.1),
                 ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(18),
                 borderSide: const BorderSide(
-                  color: AppTheme.goldAccent,
+                  color: AppTheme.primaryRed,
                   width: 1.2,
                 ),
               ),

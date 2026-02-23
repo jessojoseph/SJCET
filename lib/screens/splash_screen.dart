@@ -78,15 +78,11 @@ class _SplashScreenState extends State<SplashScreen>
     final theme = Theme.of(context);
 
     return Scaffold(
-      backgroundColor: AppTheme.pureBlack,
+      backgroundColor: AppTheme.pureWhite,
       body: BlocListener<AuthBloc, AuthState>(
-        listener: (context, state) {
-          // If auth succeeds early or status changes, we could navigate,
-          // but we wait for the timer to show the brand for at least 4 seconds.
-        },
+        listener: (context, state) {},
         child: Stack(
           children: [
-            // 1. Base Gradient Background
             Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
@@ -128,7 +124,7 @@ class _SplashScreenState extends State<SplashScreen>
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             border: Border.all(
-                              color: Colors.white.withValues(alpha: 0.05),
+                              color: AppTheme.primaryRed.withValues(alpha: 0.1),
                               width: 1,
                             ),
                           ),
@@ -141,8 +137,8 @@ class _SplashScreenState extends State<SplashScreen>
                             shape: BoxShape.circle,
                             boxShadow: [
                               BoxShadow(
-                                color: AppTheme.accentIndigo.withValues(
-                                  alpha: 0.35,
+                                color: AppTheme.primaryRed.withValues(
+                                  alpha: 0.15,
                                 ),
                                 blurRadius: 60,
                                 spreadRadius: 15,
@@ -165,7 +161,7 @@ class _SplashScreenState extends State<SplashScreen>
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
                                 colors: [
-                                  Colors.white.withValues(alpha: 0.15),
+                                  AppTheme.primaryRed.withValues(alpha: 0.05),
                                   Colors.transparent,
                                 ],
                               ),
@@ -186,7 +182,7 @@ class _SplashScreenState extends State<SplashScreen>
                     Text(
                       "SJCET PALAI",
                       style: theme.textTheme.bodyMedium?.copyWith(
-                        color: Colors.white.withValues(alpha: 0.5),
+                        color: AppTheme.charcoal.withValues(alpha: 0.4),
                         letterSpacing: 8,
                       ),
                     ),
@@ -207,9 +203,11 @@ class _SplashScreenState extends State<SplashScreen>
                     width: 50,
                     height: 2,
                     child: LinearProgressIndicator(
-                      backgroundColor: Colors.white.withValues(alpha: 0.05),
+                      backgroundColor: AppTheme.charcoal.withValues(
+                        alpha: 0.05,
+                      ),
                       valueColor: AlwaysStoppedAnimation<Color>(
-                        AppTheme.goldAccent.withValues(alpha: 0.5),
+                        AppTheme.primaryRed.withValues(alpha: 0.3),
                       ),
                     ),
                   ),
@@ -239,7 +237,7 @@ class _SplashScreenState extends State<SplashScreen>
             child: const Icon(
               Icons.history_edu,
               size: 400,
-              color: Colors.white,
+              color: AppTheme.charcoal,
             ),
           ),
         ),
@@ -251,7 +249,7 @@ class _SplashScreenState extends State<SplashScreen>
             child: const Icon(
               Icons.account_balance,
               size: 250,
-              color: AppTheme.goldAccent,
+              color: AppTheme.primaryRed,
             ),
           ),
         ),

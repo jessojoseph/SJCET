@@ -43,7 +43,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: Icon(
                 Icons.history_edu,
                 size: context.wp(100),
-                color: Colors.white,
+                color: AppTheme.charcoal,
               ),
             ),
           ),
@@ -55,7 +55,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: Icon(
                 Icons.account_balance,
                 size: context.wp(60),
-                color: AppTheme.goldAccent,
+                color: AppTheme.primaryRed,
               ),
             ),
           ),
@@ -89,8 +89,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                         color: _currentPage == index
-                            ? Colors.white
-                            : Colors.white.withOpacity(0.3),
+                            ? AppTheme.primaryRed
+                            : AppTheme.primaryRed.withValues(alpha: 0.2),
                       ),
                     );
                   }),
@@ -118,17 +118,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     height: 70,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
-                        colors: [
-                          Colors.white,
-                          AppTheme.goldAccent.withOpacity(0.8),
-                        ],
+                        colors: [AppTheme.primaryRed, AppTheme.secondaryRed],
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: AppTheme.goldAccent.withOpacity(0.3),
+                          color: AppTheme.primaryRed.withValues(alpha: 0.3),
                           blurRadius: 20,
                           spreadRadius: 2,
                         ),
@@ -136,7 +133,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                     child: const Icon(
                       Icons.keyboard_arrow_right,
-                      color: AppTheme.pureBlack,
+                      color: Colors.white,
                       size: 35,
                     ),
                   ),
@@ -253,7 +250,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           decoration: BoxDecoration(
             border: isSelected
                 ? Border.all(
-                    color: AppTheme.goldAccent.withOpacity(0.3),
+                    color: AppTheme.primaryRed.withValues(alpha: 0.3),
                     width: 2,
                   )
                 : null,
@@ -278,9 +275,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         title,
                         overflow: TextOverflow.ellipsis,
                         style: GoogleFonts.outfit(
-                          color: Colors.white.withOpacity(
-                            isSelected ? 1.0 : 0.9,
-                          ),
+                          color: isSelected
+                              ? AppTheme.charcoal
+                              : AppTheme.charcoal.withValues(alpha: 0.8),
                           fontSize: width > 120 ? 14 : 12,
                           fontWeight: isSelected
                               ? FontWeight.w600
@@ -295,11 +292,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         shape: BoxShape.circle,
                         border: Border.all(
                           color: isSelected
-                              ? AppTheme.goldAccent
-                              : Colors.white.withOpacity(0.15),
+                              ? AppTheme.primaryRed
+                              : AppTheme.charcoal.withValues(alpha: 0.15),
                           width: 1.5,
                         ),
-                        color: Colors.white.withOpacity(0.05),
+                        color: isSelected
+                            ? AppTheme.primaryRed.withValues(alpha: 0.1)
+                            : Colors.transparent,
                       ),
                       child: Center(
                         child: Container(
@@ -308,7 +307,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: isSelected
-                                ? AppTheme.goldAccent
+                                ? AppTheme.primaryRed
                                 : Colors.transparent,
                           ),
                         ),
@@ -360,7 +359,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             Text(
                               "Travel Journal",
                               style: GoogleFonts.outfit(
-                                color: Colors.white,
+                                color: AppTheme.charcoal,
                                 fontSize: context.sp(22),
                                 fontWeight: FontWeight.w500,
                               ),
@@ -376,7 +375,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           child: Icon(
                             Icons.public,
                             size: context.wp(40),
-                            color: Colors.white.withOpacity(0.5),
+                            color: AppTheme.charcoal.withValues(alpha: 0.5),
                           ),
                         ),
                       ],
@@ -396,7 +395,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 const TextSpan(text: "Unlock "),
                 TextSpan(
                   text: "Your\nUnique Way To\nUse Orbyte",
-                  style: TextStyle(color: Colors.white.withOpacity(0.55)),
+                  style: TextStyle(
+                    color: AppTheme.charcoal.withValues(alpha: 0.45),
+                  ),
                 ),
               ],
             ),

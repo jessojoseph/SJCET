@@ -108,7 +108,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             : () => Navigator.pop(context),
                         icon: const Icon(
                           Icons.arrow_back_ios_new,
-                          color: Colors.white,
+                          color: AppTheme.charcoal,
                         ),
                       ),
                       SizedBox(height: context.hp(4)),
@@ -117,7 +117,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         style: GoogleFonts.outfit(
                           fontSize: context.sp(42),
                           fontWeight: FontWeight.w800,
-                          color: Colors.white,
+                          color: AppTheme.charcoal,
                           height: 1.1,
                         ),
                       ),
@@ -129,7 +129,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             ? "Verify your identity"
                             : "Create a new security key",
                         style: GoogleFonts.outfit(
-                          color: Colors.white54,
+                          color: AppTheme.charcoal.withValues(alpha: 0.5),
                           fontSize: context.sp(16),
                         ),
                       ),
@@ -174,7 +174,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         Text(
           "SECURITY QUESTION",
           style: GoogleFonts.outfit(
-            color: AppTheme.goldAccent,
+            color: AppTheme.primaryRed,
             fontWeight: FontWeight.bold,
             fontSize: 12,
           ),
@@ -183,7 +183,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         Text(
           _foundUser!.securityQuestion,
           style: GoogleFonts.outfit(
-            color: Colors.white,
+            color: AppTheme.charcoal,
             fontSize: context.sp(18),
             fontWeight: FontWeight.w300,
           ),
@@ -202,7 +202,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           child: Text(
             "Change Email?",
             style: GoogleFonts.outfit(
-              color: AppTheme.goldAccent.withValues(alpha: 0.5),
+              color: AppTheme.primaryRed.withValues(alpha: 0.5),
               fontSize: 12,
             ),
           ),
@@ -246,7 +246,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           child: Text(
             label,
             style: GoogleFonts.outfit(
-              color: Colors.white54,
+              color: AppTheme.charcoal.withValues(alpha: 0.4),
               fontSize: 10,
               fontWeight: FontWeight.bold,
               letterSpacing: 2,
@@ -261,12 +261,12 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             controller: controller,
             obscureText: isPassword,
             enabled: enabled,
-            style: GoogleFonts.outfit(color: Colors.white),
+            style: GoogleFonts.outfit(color: AppTheme.charcoal),
             decoration: InputDecoration(
-              prefixIcon: Icon(icon, color: AppTheme.goldAccent, size: 20),
+              prefixIcon: Icon(icon, color: AppTheme.primaryRed, size: 20),
               hintText: hint,
               hintStyle: GoogleFonts.outfit(
-                color: Colors.white12,
+                color: AppTheme.charcoal.withValues(alpha: 0.2),
                 fontSize: 14,
               ),
               filled: true,
@@ -295,11 +295,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           gradient: const LinearGradient(
-            colors: [AppTheme.accentIndigo, Color(0xFF3F3D89)],
+            colors: [AppTheme.primaryRed, AppTheme.secondaryRed],
           ),
           boxShadow: [
             BoxShadow(
-              color: AppTheme.accentIndigo.withValues(alpha: 0.3),
+              color: AppTheme.primaryRed.withValues(alpha: 0.2),
               blurRadius: 20,
               offset: const Offset(0, 10),
             ),

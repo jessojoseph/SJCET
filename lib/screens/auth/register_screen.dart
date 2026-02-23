@@ -97,7 +97,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: Icon(
                     Icons.school,
                     size: context.wp(80),
-                    color: AppTheme.goldAccent,
+                    color: AppTheme.charcoal,
                   ),
                 ),
               ),
@@ -105,11 +105,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 bottom: context.hp(5),
                 left: -context.wp(10),
                 child: Opacity(
-                  opacity: 0.1,
+                  opacity: 0.05,
                   child: Icon(
                     Icons.menu_book,
                     size: context.wp(50),
-                    color: AppTheme.accentIndigo,
+                    color: AppTheme.secondaryRed,
                   ),
                 ),
               ),
@@ -128,14 +128,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 ? null
                                 : () => Navigator.pop(context),
                             style: IconButton.styleFrom(
-                              backgroundColor: Colors.white.withValues(
+                              backgroundColor: AppTheme.charcoal.withValues(
                                 alpha: 0.05,
                               ),
                               padding: const EdgeInsets.all(12),
                             ),
                             icon: const Icon(
                               Icons.arrow_back_ios_new,
-                              color: Colors.white,
+                              color: AppTheme.charcoal,
                               size: 18,
                             ),
                           ),
@@ -162,7 +162,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 style: GoogleFonts.outfit(
                                   fontSize: context.sp(36),
                                   fontWeight: FontWeight.w800,
-                                  color: Colors.white,
+                                  color: AppTheme.charcoal,
                                   height: 1.1,
                                   letterSpacing: -1,
                                 ),
@@ -174,12 +174,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   vertical: 8,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: AppTheme.goldAccent.withValues(
+                                  color: AppTheme.primaryRed.withValues(
                                     alpha: 0.1,
                                   ),
                                   borderRadius: BorderRadius.circular(20),
                                   border: Border.all(
-                                    color: AppTheme.goldAccent.withValues(
+                                    color: AppTheme.primaryRed.withValues(
                                       alpha: 0.2,
                                     ),
                                   ),
@@ -187,7 +187,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 child: Text(
                                   "Joining as: ${widget.selectedRole}",
                                   style: GoogleFonts.outfit(
-                                    color: AppTheme.goldAccent,
+                                    color: AppTheme.primaryRed,
                                     fontWeight: FontWeight.w600,
                                     fontSize: context.sp(13),
                                   ),
@@ -234,7 +234,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               Text(
                                 "RECOVERY QUESTION",
                                 style: GoogleFonts.outfit(
-                                  color: Colors.white54,
+                                  color: AppTheme.charcoal.withValues(
+                                    alpha: 0.4,
+                                  ),
                                   fontSize: 10,
                                   fontWeight: FontWeight.w700,
                                   letterSpacing: 1.5,
@@ -253,9 +255,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     child: DropdownButton<String>(
                                       value: _selectedQuestion,
                                       isExpanded: true,
-                                      dropdownColor: const Color(0xFF1A1A1A),
+                                      dropdownColor: AppTheme.pureWhite,
                                       style: GoogleFonts.outfit(
-                                        color: Colors.white,
+                                        color: AppTheme.charcoal,
                                         fontSize: 14,
                                       ),
                                       items: _securityQuestions.map((
@@ -306,14 +308,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     borderRadius: BorderRadius.circular(20),
                                     gradient: const LinearGradient(
                                       colors: [
-                                        Color(0xFFFFFFFF),
-                                        Color(0xFFE2E2E2),
+                                        AppTheme.primaryRed,
+                                        AppTheme.secondaryRed,
                                       ],
                                     ),
                                     boxShadow: [
                                       BoxShadow(
-                                        color: Colors.white.withValues(
-                                          alpha: 0.1,
+                                        color: AppTheme.primaryRed.withValues(
+                                          alpha: 0.2,
                                         ),
                                         blurRadius: 20,
                                         offset: const Offset(0, 10),
@@ -327,13 +329,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                             height: 24,
                                             child: CircularProgressIndicator(
                                               strokeWidth: 2,
-                                              color: AppTheme.pureBlack,
+                                              color: AppTheme.charcoal,
                                             ),
                                           )
                                         : Text(
                                             "Register",
                                             style: GoogleFonts.outfit(
-                                              color: AppTheme.pureBlack,
+                                              color: Colors.white,
                                               fontSize: 16,
                                               fontWeight: FontWeight.w700,
                                               letterSpacing: 1.2,
@@ -350,14 +352,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     Text(
                                       "By registering, you agree to follow the",
                                       style: GoogleFonts.outfit(
-                                        color: Colors.white38,
+                                        color: AppTheme.charcoal.withValues(
+                                          alpha: 0.4,
+                                        ),
                                         fontSize: 11,
                                       ),
                                     ),
                                     Text(
                                       "SJCET Campus Conduct Policy",
                                       style: GoogleFonts.outfit(
-                                        color: AppTheme.goldAccent.withValues(
+                                        color: AppTheme.primaryRed.withValues(
                                           alpha: 0.5,
                                         ),
                                         fontSize: 11,
@@ -383,7 +387,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   child: RichText(
                                     text: TextSpan(
                                       style: GoogleFonts.outfit(
-                                        color: Colors.white,
+                                        color: AppTheme.charcoal,
                                         fontSize: context.sp(15),
                                       ),
                                       children: [
@@ -396,7 +400,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         TextSpan(
                                           text: "Sign In",
                                           style: TextStyle(
-                                            color: AppTheme.goldAccent,
+                                            color: AppTheme.primaryRed,
                                             fontWeight: FontWeight.w700,
                                             decoration:
                                                 TextDecoration.underline,
@@ -441,7 +445,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           child: Text(
             label.toUpperCase(),
             style: GoogleFonts.outfit(
-              color: Colors.white54,
+              color: AppTheme.charcoal.withValues(alpha: 0.4),
               fontSize: 10,
               fontWeight: FontWeight.w700,
               letterSpacing: 1.5,
@@ -459,19 +463,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
             validator: validator,
             enabled: enabled,
             style: GoogleFonts.outfit(
-              color: Colors.white,
+              color: AppTheme.charcoal,
               fontSize: 15,
               fontWeight: FontWeight.w400,
             ),
             decoration: InputDecoration(
               hintText: hint,
               hintStyle: GoogleFonts.outfit(
-                color: Colors.white12,
+                color: AppTheme.charcoal.withValues(alpha: 0.2),
                 fontSize: 13,
               ),
               prefixIcon: Icon(
                 icon,
-                color: AppTheme.goldAccent.withValues(alpha: 0.7),
+                color: AppTheme.primaryRed.withValues(alpha: 0.7),
                 size: 18,
               ),
               filled: true,
@@ -487,13 +491,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(18),
                 borderSide: BorderSide(
-                  color: Colors.white.withValues(alpha: 0.05),
+                  color: AppTheme.charcoal.withValues(alpha: 0.1),
                 ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(18),
                 borderSide: BorderSide(
-                  color: AppTheme.goldAccent.withValues(alpha: 0.3),
+                  color: AppTheme.primaryRed.withValues(alpha: 0.4),
                   width: 1.2,
                 ),
               ),
