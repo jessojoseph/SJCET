@@ -38,14 +38,14 @@ class _LoginScreenState extends State<LoginScreen> {
       body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state is AuthSuccess) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(
-                  'Access Granted. Welcome back, ${state.user.name}!',
-                ),
-                backgroundColor: Colors.indigo,
-              ),
-            );
+            // ScaffoldMessenger.of(context).showSnackBar(
+            //   SnackBar(
+            //     content: Text(
+            //       'Access Granted. Welcome back, ${state.user.name}!',
+            //     ),
+            //     backgroundColor: Colors.indigo,
+            //   ),
+            // );
             Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(
                 builder: (context) => HomeScreen(user: state.user),
