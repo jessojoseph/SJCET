@@ -15,7 +15,6 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
-  String _selectedRole = "Student"; // Default role
 
   @override
   Widget build(BuildContext context) {
@@ -175,7 +174,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       top: constraints.maxHeight * 0.1,
                       right: 0,
                       child: _buildCharacterCard(
-                        title: "Worker",
+                        title: "Freelancer",
                         image: "assets/images/worker.png",
                         width: cardWidth,
                         height: cardHeight,
@@ -185,7 +184,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       bottom: constraints.maxHeight * 0.1,
                       left: 0,
                       child: _buildCharacterCard(
-                        title: "Freelancer",
+                        title: "Teacher",
                         image: "assets/images/freelancer.png",
                         width: cardWidth,
                         height: cardHeight,
@@ -232,102 +231,52 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     required double width,
     required double height,
   }) {
-    bool isSelected = _selectedRole == title;
-
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          _selectedRole = title;
-        });
-      },
-      child: GlassCard(
-        borderRadius: 24,
-        blur: 20,
-        opacity: isSelected ? 0.2 : 0.1,
-        child: Container(
-          width: width,
-          height: height,
-          decoration: BoxDecoration(
-            border: isSelected
-                ? Border.all(
-                    color: AppTheme.primaryRed.withValues(alpha: 0.3),
-                    width: 2,
-                  )
-                : null,
-            gradient: RadialGradient(
-              center: Alignment.center,
-              radius: 0.8,
-              colors: [
-                Colors.white.withOpacity(isSelected ? 0.1 : 0.05),
-                Colors.transparent,
-              ],
-            ),
+    return GlassCard(
+      borderRadius: 24,
+      blur: 20,
+      opacity: 0.1,
+      child: Container(
+        width: width,
+        height: height,
+        decoration: BoxDecoration(
+          gradient: RadialGradient(
+            center: Alignment.center,
+            radius: 0.8,
+            colors: [Colors.white.withOpacity(0.05), Colors.transparent],
           ),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Flexible(
-                      child: Text(
-                        title,
-                        overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.outfit(
-                          color: isSelected
-                              ? AppTheme.charcoal
-                              : AppTheme.charcoal.withValues(alpha: 0.8),
-                          fontSize: width > 120 ? 14 : 12,
-                          fontWeight: isSelected
-                              ? FontWeight.w600
-                              : FontWeight.w500,
-                        ),
+        ),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Flexible(
+                    child: Text(
+                      title,
+                      overflow: TextOverflow.ellipsis,
+                      style: GoogleFonts.outfit(
+                        color: AppTheme.charcoal.withValues(alpha: 0.8),
+                        fontSize: width > 120 ? 14 : 12,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
-                    Container(
-                      width: 18,
-                      height: 18,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: isSelected
-                              ? AppTheme.primaryRed
-                              : AppTheme.charcoal.withValues(alpha: 0.15),
-                          width: 1.5,
-                        ),
-                        color: isSelected
-                            ? AppTheme.primaryRed.withValues(alpha: 0.1)
-                            : Colors.transparent,
-                      ),
-                      child: Center(
-                        child: Container(
-                          width: 8,
-                          height: 8,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: isSelected
-                                ? AppTheme.primaryRed
-                                : Colors.transparent,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Image.asset(
-                    image,
-                    fit: BoxFit.contain,
-                    alignment: Alignment.center,
                   ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset(
+                  image,
+                  fit: BoxFit.contain,
+                  alignment: Alignment.center,
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
